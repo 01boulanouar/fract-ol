@@ -6,7 +6,7 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:39:38 by moboulan          #+#    #+#             */
-/*   Updated: 2024/12/16 17:45:57 by moboulan         ###   ########.fr       */
+/*   Updated: 2024/12/16 18:35:43 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,9 @@ static void	ft_error(void *value)
 
 static void	data_init(t_data *data)
 {
-	if (!ft_strcmp(data->name, "julia"))
-		data->color = 0xF0FF0000;
-	else
-		data->color = 0x00050709;
+	data->color = 0x00050709;
 	data->iterations = 100;
 	data->zoom = 1.0;
-	data->lock_mouse = 1;
-	data->x_offset = 0.0;
-	data->y_offset = 0.0;
 	data->mlx = mlx_init();
 	ft_error(data->mlx);
 	data->win = mlx_new_window(data->mlx, WIDTH, HEIGHT, TITLE);
@@ -41,24 +35,19 @@ static void	data_init(t_data *data)
 			&data->endian);
 	ft_error(data->addr);
 	mlx_key_hook(data->win, key_hook, data);
-	mlx_hook(data->win, 6, 0, mouse_move, data);
 	mlx_mouse_hook(data->win, mouse_hook, data);
 	mlx_hook(data->win, CLOSE_BUTTON, 0, close_window, data);
 }
 
 static void	display_usage(void)
 {
-	write(1, "#####Usage#####\n", 17);
-	write(1, "./fractol mandelbrot\n", 22);
-	write(1, "./fractol julia 0.45 0.2 (between -2 and 2)\n", 45);
-	write(1, "./fractol burningship\n", 23);
-	write(1, "#####Controls#####\n", 20);
-	write(1, "arrow keys move\n", 17);
-	write(1, "mouse wheel zoom\n", 18);
-	write(1, "left click change color\n", 25);
-	write(1, "right click lock/unlock julia\n", 31);
-	write(1, "+/- add/reduce detail\n", 23);
-	write(1, "r key reset\n", 13);
+	ft_write("Usage:\n");
+	ft_write("./fractol mandelbrot\n");
+	ft_write("./fractol julia 0.45 0.2\n");
+	ft_write("Controls:\n");
+	ft_write("mouse wheel zoom\n");
+	ft_write("+/- add/reduce detail\n");
+	ft_write("r key reset\n");
 }
 
 static void	handle_args(int argc, char **argv, t_data *data)
@@ -75,11 +64,6 @@ static void	handle_args(int argc, char **argv, t_data *data)
 		data->name = "julia";
 		data->c.real = ft_atodouble(argv[2]);
 		data->c.imaginary = -ft_atodouble(argv[3]);
-		return ;
-	}
-	else if (argc == 2 && !ft_strcmp(argv[1], "burningship"))
-	{
-		data->name = "burningship";
 		return ;
 	}
 	display_usage();

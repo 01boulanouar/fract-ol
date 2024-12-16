@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:52:05 by moboulan          #+#    #+#             */
-/*   Updated: 2024/12/15 00:39:04 by moboulan         ###   ########.fr       */
+/*   Updated: 2024/12/16 18:37:18 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 		i++;
 	return (i);
 }
@@ -39,9 +39,12 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (r);
 }
 
-int	ft_isdigit(int c)
+void	ft_write(char *str)
 {
-	return ('0' <= c && c <= '9');
+	size_t	len;
+
+	len = ft_strlen(str);
+	write(1, str, len);
 }
 
 double	ft_atodouble(char *str)
@@ -60,11 +63,11 @@ double	ft_atodouble(char *str)
 		if (str[i++] == '-')
 			signe = -1;
 	}
-	while (ft_isdigit(str[i]))
+	while (('0' <= str[i] && str[i] <= '9'))
 		res = res * 10 + (str[i++] - '0');
 	if (str[i] == '.' || str[i] == ',')
 		i++;
-	while (ft_isdigit(str[i]))
+	while (('0' <= str[i] && str[i] <= '9'))
 	{
 		power = power / 10;
 		res = res + (str[i] - '0') * power;
@@ -83,11 +86,11 @@ int	valid_value(char *str)
 		i++;
 	if ((str[i] == '-' || str[i] == '+'))
 		i++;
-	while (ft_isdigit(str[i]))
+	while (('0' <= str[i] && str[i] <= '9'))
 		i++;
 	if (str[i] == '.')
 		i++;
-	while (ft_isdigit(str[i]))
+	while (('0' <= str[i] && str[i] <= '9'))
 		i++;
 	if (ft_strlen(str) != i
 		|| !ft_strcmp(str, "")
@@ -96,5 +99,5 @@ int	valid_value(char *str)
 		|| !ft_strcmp(str, "."))
 		return (0);
 	num = ft_atodouble(str);
-	return ((-2 <= num && num <= 2));
+	return (1);
 }

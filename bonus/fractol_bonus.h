@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:25:08 by moboulan          #+#    #+#             */
-/*   Updated: 2024/12/16 17:51:41 by moboulan         ###   ########.fr       */
+/*   Updated: 2024/12/16 18:37:40 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef FRACTOL_BONUS_H
+# define FRACTOL_BONUS_H
 
 # include <math.h>
 # include <mlx.h>
 # include <stdlib.h>
 # include <unistd.h>
 
-# define TITLE "Fractol"
+# define TITLE "Fractol Bonus"
 # define HEIGHT 600
 # define WIDTH 600
 
@@ -75,12 +75,12 @@ typedef struct s_data
 
 int				close_window(t_data *data);
 int				key_hook(int keycode, t_data *data);
-int				mouse_hook(int button, int x, int y, t_data *data);
 int				mouse_move(int x, int y, t_data *data);
-
+int				mouse_hook(int button, int x, int y, t_data *data);
 void			render(t_data data);
 double			scale(double value, double min, double max, double dimension);
 
+void			ft_write(char *str);
 int				ft_strcmp(const char *s1, const char *s2);
 double			ft_atodouble(char *str);
 int				valid_value(char *str);

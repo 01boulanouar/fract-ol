@@ -1,2 +1,4 @@
 *.o
 fractol
+fractol_bonus
+.vscode

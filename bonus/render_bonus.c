@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render.c                                           :+:      :+:    :+:   */
+/*   render_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 01:59:24 by moboulan          #+#    #+#             */
-/*   Updated: 2024/12/15 14:19:17 by moboulan         ###   ########.fr       */
+/*   Updated: 2024/12/16 17:58:55 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "complex.h"
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 static void	pixel_put(t_data data, int x, int y, int color)
 {
