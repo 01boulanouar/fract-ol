@@ -6,7 +6,7 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 18:25:08 by moboulan          #+#    #+#             */
-/*   Updated: 2024/12/15 01:09:59 by moboulan         ###   ########.fr       */
+/*   Updated: 2024/12/16 17:51:41 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <unistd.h>
 
 # define TITLE "Fractol"
-# define HEIGHT 800
-# define WIDTH 800
+# define HEIGHT 600
+# define WIDTH 600
 
 # define ESC 53
 

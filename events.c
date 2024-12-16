@@ -6,7 +6,7 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:16:42 by moboulan          #+#    #+#             */
-/*   Updated: 2024/12/15 11:59:26 by moboulan         ###   ########.fr       */
+/*   Updated: 2024/12/16 17:53:12 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ int	key_hook(int keycode, t_data *data)
 	if (keycode == ESC)
 		close_window(data);
 	else if (keycode == LEFT_ARROW)
-		data->x_offset -= 0.5 * data->zoom;
+		data->x_offset -= 0.2 * data->zoom;
 	else if (keycode == RIGHT_ARROW)
-		data->x_offset += 0.5 * data->zoom;
+		data->x_offset += 0.2 * data->zoom;
 	else if (keycode == DOWN_ARROW)
-		data->y_offset -= 0.5 * data->zoom;
+		data->y_offset -= 0.2 * data->zoom;
 	else if (keycode == UP_ARROW)
-		data->y_offset += 0.5 * data->zoom;
+		data->y_offset += 0.2 * data->zoom;
 	else if (keycode == R_KEY)
 	{
 		data->zoom = 1;
