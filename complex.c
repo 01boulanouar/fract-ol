@@ -6,7 +6,7 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 05:19:17 by moboulan          #+#    #+#             */
-/*   Updated: 2024/12/12 16:16:22 by moboulan         ###   ########.fr       */
+/*   Updated: 2025/01/26 14:57:00 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ t_complex	absolute(t_complex z)
 
 double	magnitude(t_complex z)
 {
-	return (sqrt((z.real * z.real) + (z.imaginary * z.imaginary)));
+	return ((z.real * z.real) + (z.imaginary * z.imaginary));
 }

@@ -6,7 +6,7 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:52:05 by moboulan          #+#    #+#             */
-/*   Updated: 2024/12/15 00:39:04 by moboulan         ###   ########.fr       */
+/*   Updated: 2025/01/26 11:42:52 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ double	ft_atodouble(char *str)
 	}
 	while (ft_isdigit(str[i]))
 		res = res * 10 + (str[i++] - '0');
-	if (str[i] == '.' || str[i] == ',')
+	if (str[i] == '.')
 		i++;
 	while (ft_isdigit(str[i]))
 	{
@@ -92,7 +92,9 @@ int	valid_value(char *str)
 	if (ft_strlen(str) != i
 		|| !ft_strcmp(str, "")
 		|| !ft_strcmp(str, "-")
+		|| !ft_strcmp(str, "+")
 		|| !ft_strcmp(str, "-.")
+		|| !ft_strcmp(str, "+.")
 		|| !ft_strcmp(str, "."))
 		return (0);
 	num = ft_atodouble(str);

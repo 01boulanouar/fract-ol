@@ -6,7 +6,7 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 01:59:24 by moboulan          #+#    #+#             */
-/*   Updated: 2024/12/15 14:19:17 by moboulan         ###   ########.fr       */
+/*   Updated: 2025/01/26 15:09:27 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	get_fractal_pixel_color(int x, int y, t_data data)
 			data.z = sum(square(absolute(data.z)), data.c);
 		else
 			data.z = sum(square(data.z), data.c);
-		if (magnitude(data.z) > 2)
+		if (magnitude(data.z) > 4)
 			return (i * data.color);
 		i++;
 	}
